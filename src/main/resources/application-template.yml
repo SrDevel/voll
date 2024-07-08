@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: # URL de tu base de datos
+    username: # Usuario de tu base de datos
+    password: # Contraseña de tu base de datos
+
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    open-in-view: false
+
+server:
+  error:
+    include-stacktrace: never
+
+api:
+  security:
+    secret: # Clave secreta para JWT

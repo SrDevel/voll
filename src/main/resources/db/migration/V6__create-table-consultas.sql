@@ -1,15 +1,11 @@
-create table pacientes (
+create table consultas (
     id bigint not null auto_increment,
-    nombre varchar(100) not null,
-    email varchar(100) not null unique,
-    telefono varchar(100) not null,
-    documento varchar(100) not null unique,
-    calle varchar(100) not null,
-    distrito varchar(100) not null,
-    ciudad varchar(100) not null,
-    numero varchar(100),
-    complemento varchar(100),
-    activo tinyint(1) not null default 1,
+    medico_id bigint not null,
+    paciente_id bigint not null,
+    data datetime not null,
 
-    primary key (id)
+    primary key (id),
+
+    constraint fk_consultas_medico_id foreign key (medico_id) references vollmed_api.medicos(id),
+    constraint fk_consultas_paciente_id foreign key (paciente_id) references consultas(id)
 );
